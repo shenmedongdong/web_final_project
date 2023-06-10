@@ -26,6 +26,3 @@ urlpatterns = [
     path('blog/search/', include('blog.urls')),
     path("", RedirectView.as_view(url="/blog/", permanent=True)), # only input 127.0.0.1:8000 -> 127.0.0.1:8000/blog
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # for media
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
