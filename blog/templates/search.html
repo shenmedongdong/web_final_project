@@ -1,0 +1,18 @@
+<form action="{% url 'search' %}" method="GET">
+    <input type="text" name="query" placeholder="검색어를 입력하세요">
+    <button type="submit">검색</button>
+</form>
+
+{% if query %}
+    <h2>검색 결과: "{{ query }}"</h2>
+{% endif %}
+
+{% if results %}
+    <ul>
+        {% for post in results %}
+            <li>{{ post.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>검색 결과가 없습니다.</p>
+{% endif %}
