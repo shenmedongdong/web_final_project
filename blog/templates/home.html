@@ -38,13 +38,43 @@
         }
 
         #myCarousel .carousel-control-prev {
-            left: 10;
+            left: 8;
         }
 
         #myCarousel .carousel-control-next {
-            right: 10;
+            right: 8;
+        }
+        
+        .capsule-swiper-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content
         }
 
+        .swiper-slide {
+            position: relative;
+            text-align: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+        }
+
+        .caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 
     {% block extraCSS %}
@@ -55,36 +85,67 @@
 
 <body>
     <div class="container-fluid">
-    <div class ="jumbotron">
-            <!-- home.html -->
-        <form action="{% url 'search' %}" method="GET">
-        <input class="search-input" type="text" name="query" placeholder="Please enter search words">
-        <button type="submit">Search</button>
-</form>
-
+        <div class ="jumbotron">
+                <!-- home.html -->
+            <form action="{% url 'search' %}" method="GET">
+            <input class="search-input" type="text" name="query" placeholder="Please enter search words">
+            <button type="submit">Search</button>
+            </form>
         </div>
     </div>
-    </div>
-    <center>
-        <h1>You are logged out</h1>
-        <p>Please log in and check the neighborhood new post</p>
-        
+
+    <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK3SURBVHgBzZgxcNMwFIZ/eWMLjCyYnbvSATZKssBI2WAiWVnig5EhyR0jR9OFlWbrRhlhadqVgfRgxyyMNFun2n1PUmI7iWPJju3+d7pIsWV9J+k9vScBS4UeXDjYpeoWlSaVhi6sKQR8hFSAEwQ4EkNZt5IwfTF8gzYN9op6NGEjgQn12xcfcWDeJQvGIwgHn6nqoph8KgMTOLEGpkEwPap62KyGtKwDWtYpbKD0vjmC2jdlyCewVtp+EylAxyi+XFlKBRMLQLxkPysAmo0+waUESyylg2SrVxkQK8R9PWZC85mSJg9pZdXLodn6gHHUjNRDXQqSkyGh9Cy5qE+uZpBSMyXQRd3i00LLkS6AN1yW7tFx9/4c6HwBbjSWn9901fN3f1TdVnR8SRaG0odrtna6CobhXh8vgz1sq/9uuep5HjDN4tAsNY06/P4a1W/TxD7bSz7/RQfAhXY3+cG2FJSDO0avnw6Bb4Oo/aANvIgZzb8J8KlVFKypoEILq/veLxusoaCiAC0/2I63HuylsU+eQ9lLhMn2xRSbFEPZffEpOf4n/aj9Y0TlIGqzEcSt89wHDjsw1NQeahXQYXs9EC/lfx9GUrG93OgnRh2ygHgzFwFS+qugOKYx0SMvHYg1c575gdirjxVUIMPebJ3upwOx2HkyTF4glmaR8VT4lsJfU89elkJMxB62ueroP0aoW5QbzqrxyJOO95piKrI6mqW7s2bkPAMYO5ONK8Qg3pxDUUYxjk9hZeKUfpjMmp2FF/q84VAdkC/HXFACSuZfIZ4D9jclOYFaq9L3pQNZZqyUuZYMdqaB/FUPV0YJGmy7lD3G3wzQXHdvlX0VpFKf4pmzWq6ONKgM2V6adalHduaThGGrHi1a2Eag5mOoNGiXFv6xDKWFbEfXi6qMaYnO6DfX9eK11BW8QgKhLWaMowAAAABJRU5ErkJggg==">
+    <h2>最近好多人搜尋</h2>
+    <div class="capsule-swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="https://curation.pixnet.net/寵物">
+                <img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" alt="Image">
+                <div class="caption">
+                  <h4>寵物</h4>
+                </div>
+              </a>
+        </div>
+
+          <div class="swiper-slide">
+            <a href="https://curation.pixnet.net/寵物">
+                <img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" alt="Image">
+                <div class="caption">
+                  <h4>寵物</h4>
+                </div>
+              </a>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" alt="Slide 3">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    <p><a href="https://curation.pixnet.net/%E5%AF%B5%E7%89%A9"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+    <p><a href="https://curation.pixnet.net/%E8%A6%AA%E5%AD%90%E6%97%85%E9%81%8A"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+    <p><a href="https://curation.pixnet.net/%E9%9F%93%E5%9C%8B"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+    <p><a href="https://curation.pixnet.net/%E6%9D%B1%E4%BA%AC"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+    <p><a href="https://curation.pixnet.net/%E6%B2%96%E7%B9%A9"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+    <p>本日熱門</p>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- 슬라이드 항목 -->
-            <div class="carousel-inner" style="width: 400px; height: 200px;">
+            <div class="carousel-inner" style="width: 300px; height: 250px;">
                 <div class="carousel-item active">
                     <a href="https://mercury0314.pixnet.net/blog/post/571824360-%e9%a6%99%e6%b8%af%e5%90%89%e4%bb%95%e7%87%92%e8%87%98">
                         <img src="/media/popular_1.jpg" alt="slide 1" style="width: 100%; height: 100%; object-fit: cover;">
                     </a>
                 </div>
-                <div class="carousel-item" style="width: 400px; height: 200px;">
+                <div class="carousel-item" style="width: 300px; height: 250px;">
                     <a href="https://sai083.pixnet.net/blog/post/356176546-%e7%8b%82%e4%b8%80%e9%8d%8b-%e6%96%b0%e5%8f%b0%e5%bc%8f%e7%81%ab%e9%8d%8b%ef%bd%9c%e6%96%b0%e5%8c%97%e7%be%8e%e9%a3%9f%ef%bd%9c">
-                        <img src="/media/popular_2.jpg" alt="slide 2" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://pic.pimg.tw/momoko121212/1686089856-1823111294-g_l.jpg" alt="slide 2" style="width: 100%; height: 100%; object-fit: cover;">
                     </a>
                 </div>
-                <div class="carousel-item" style="width: 400px; height: 200px;">
+                <div class="carousel-item" style="width: 300px; height: 250px;">
                     <a href="https://buy3943.pixnet.net/blog/post/79552054-%E5%8F%B0%E5%8C%97%E7%BE%8E%E9%A3%9F%EF%BD%9C%E6%9D%BE%E5%B1%B1%E5%8D%80%E5%B7%B7%E5%BC%84%E7%BE%8E%E9%A3%9F~pa-pa-rice-%E7%BE%A9%E5%A4%A7%E5%88%A9%E7%87%89">
-                        <img src="/media/popular_3.jpg" alt="slide 3" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://pic.pimg.tw/sai083/1684754527-2729207818-g.png" alt="slide 3" style="width: 100%; height: 100%; object-fit: cover;">
                     </a>
                 </div>
                 <!-- 이전/다음 버튼 -->
@@ -96,12 +157,13 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">다음</span>
                 </a>
-        </div>
             </div>
-        </div>        
-            
-            
-        
+        </div>
+    </div>      
+    
+    <center>
+        <h5>You are logged out</h5>
+        <p>Please log in and check the neighborhood new post</p>  
     </center>
 
 </html>
