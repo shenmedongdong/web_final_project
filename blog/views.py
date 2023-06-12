@@ -3,6 +3,7 @@ from django.template import loader
 from .models import Member
 from django.shortcuts import render
 from .models import Post
+from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
@@ -29,3 +30,14 @@ def search(request):
     }
 
     return render(request, 'search.html', context)
+  
+#註冊
+def register(request):
+  form = UserCreationForm()
+  template = loader.get_template('register.html')
+  context = {
+    'form': form,
+  }
+
+  return HttpResponse(template.render(context, request))
+  
