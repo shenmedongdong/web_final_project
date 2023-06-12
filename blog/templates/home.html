@@ -125,6 +125,17 @@
             } 
         }
 
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .read-more-btn {
+            align-self: flex-end;
+            margin-top: auto;
+        }
+
     </style>
 
     {% block extraCSS %}
@@ -146,7 +157,7 @@
 
     
     
-    <h2 style="padding-left: 30px;">最近好多人搜尋<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK3SURBVHgBzZgxcNMwFIZ/eWMLjCyYnbvSATZKssBI2WAiWVnig5EhyR0jR9OFlWbrRhlhadqVgfRgxyyMNFun2n1PUmI7iWPJju3+d7pIsWV9J+k9vScBS4UeXDjYpeoWlSaVhi6sKQR8hFSAEwQ4EkNZt5IwfTF8gzYN9op6NGEjgQn12xcfcWDeJQvGIwgHn6nqoph8KgMTOLEGpkEwPap62KyGtKwDWtYpbKD0vjmC2jdlyCewVtp+EylAxyi+XFlKBRMLQLxkPysAmo0+waUESyylg2SrVxkQK8R9PWZC85mSJg9pZdXLodn6gHHUjNRDXQqSkyGh9Cy5qE+uZpBSMyXQRd3i00LLkS6AN1yW7tFx9/4c6HwBbjSWn9901fN3f1TdVnR8SRaG0odrtna6CobhXh8vgz1sq/9uuep5HjDN4tAsNY06/P4a1W/TxD7bSz7/RQfAhXY3+cG2FJSDO0avnw6Bb4Oo/aANvIgZzb8J8KlVFKypoEILq/veLxusoaCiAC0/2I63HuylsU+eQ9lLhMn2xRSbFEPZffEpOf4n/aj9Y0TlIGqzEcSt89wHDjsw1NQeahXQYXs9EC/lfx9GUrG93OgnRh2ygHgzFwFS+qugOKYx0SMvHYg1c575gdirjxVUIMPebJ3upwOx2HkyTF4glmaR8VT4lsJfU89elkJMxB62ueroP0aoW5QbzqrxyJOO95piKrI6mqW7s2bkPAMYO5ONK8Qg3pxDUUYxjk9hZeKUfpjMmp2FF/q84VAdkC/HXFACSuZfIZ4D9jclOYFaq9L3pQNZZqyUuZYMdqaB/FUPV0YJGmy7lD3G3wzQXHdvlX0VpFKf4pmzWq6ONKgM2V6adalHduaThGGrHi1a2Eag5mOoNGiXFv6xDKWFbEfXi6qMaYnO6DfX9eK11BW8QgKhLWaMowAAAABJRU5ErkJggg==" style="padding-left: 10px; margin-bottom: 20px; max-width: 100%; max-height: 100%;">
+    <h2 style="margin-left: 30px;">最近好多人搜尋<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK3SURBVHgBzZgxcNMwFIZ/eWMLjCyYnbvSATZKssBI2WAiWVnig5EhyR0jR9OFlWbrRhlhadqVgfRgxyyMNFun2n1PUmI7iWPJju3+d7pIsWV9J+k9vScBS4UeXDjYpeoWlSaVhi6sKQR8hFSAEwQ4EkNZt5IwfTF8gzYN9op6NGEjgQn12xcfcWDeJQvGIwgHn6nqoph8KgMTOLEGpkEwPap62KyGtKwDWtYpbKD0vjmC2jdlyCewVtp+EylAxyi+XFlKBRMLQLxkPysAmo0+waUESyylg2SrVxkQK8R9PWZC85mSJg9pZdXLodn6gHHUjNRDXQqSkyGh9Cy5qE+uZpBSMyXQRd3i00LLkS6AN1yW7tFx9/4c6HwBbjSWn9901fN3f1TdVnR8SRaG0odrtna6CobhXh8vgz1sq/9uuep5HjDN4tAsNY06/P4a1W/TxD7bSz7/RQfAhXY3+cG2FJSDO0avnw6Bb4Oo/aANvIgZzb8J8KlVFKypoEILq/veLxusoaCiAC0/2I63HuylsU+eQ9lLhMn2xRSbFEPZffEpOf4n/aj9Y0TlIGqzEcSt89wHDjsw1NQeahXQYXs9EC/lfx9GUrG93OgnRh2ygHgzFwFS+qugOKYx0SMvHYg1c575gdirjxVUIMPebJ3upwOx2HkyTF4glmaR8VT4lsJfU89elkJMxB62ueroP0aoW5QbzqrxyJOO95piKrI6mqW7s2bkPAMYO5ONK8Qg3pxDUUYxjk9hZeKUfpjMmp2FF/q84VAdkC/HXFACSuZfIZ4D9jclOYFaq9L3pQNZZqyUuZYMdqaB/FUPV0YJGmy7lD3G3wzQXHdvlX0VpFKf4pmzWq6ONKgM2V6adalHduaThGGrHi1a2Eag5mOoNGiXFv6xDKWFbEfXi6qMaYnO6DfX9eK11BW8QgKhLWaMowAAAABJRU5ErkJggg==" style="padding-left: 10px; margin-bottom: 20px; max-width: 100%; max-height: 100%;">
     </h2>   
 
     <div class="capsule-swiper-container" style="display: flex; flex-wrap: nowrap; margin-bottom: 60px; width: 70%;">
@@ -213,10 +224,10 @@
 
     <center>
         <h5>You are logged out</h5>
-        <p style="margin-bottom: 60px;">Please log in and check the neighborhood new post</p>
+        <p style="margin-bottom: 30px;">Please log in and check the neighborhood new post</p>
     </center>
     <h2 style="margin-left: 30px; margin-bottom: 20px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADmSURBVHgBtVKBDYIwELyiA+AGuAEjwAZuoE4guoBxAJUR2MA4gWygI7CBDmCoVyyE1tBAIpd8+u3/3//lC4wJmSCkBa6cqSsIDxftzbtTurrvsOIRKNP+MAJi3+EbEE3HBH7V0UMIiYiRpZWb8e1Ke+GNh0h51gRyi5TeBsOQiRPWXwmSBEDRu1Qyt8ShmUBLUOPfAPfaqmKJmBIKg6BFcqfr9ylWMLZQBYRDitA55pMxgU/KJ1woMas38DMBEcIcOWeL3MoJ2heTYKK1q8KSWs+0I2Llo96SZzWxJdAiR3yhP9z/8AHIbkLFmGmhQgAAAABJRU5ErkJggg==" style="margin-right: 10px;">本日熱門</h2>
-    <div class="box">
+    <div class="box" style="margin-bottom: 30px;">
         <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
             <img src="https://pic.pimg.tw/kwyt/1685544970-3596392669-g_l.jpg" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;">
             <div class="hot-index-box__box">
@@ -259,62 +270,64 @@
             </div>
         </div>
     </div>
-
     
-    <div class="col" style="width: 70%; padding-left: 100px;">
+    <!-- 推薦給你 -->
+    <h2 style="margin-left: 30px; margin-bottom: 20px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADmSURBVHgBtVKBDYIwELyiA+AGuAEjwAZuoE4guoBxAJUR2MA4gWygI7CBDmCoVyyE1tBAIpd8+u3/3//lC4wJmSCkBa6cqSsIDxftzbtTurrvsOIRKNP+MAJi3+EbEE3HBH7V0UMIiYiRpZWb8e1Ke+GNh0h51gRyi5TeBsOQiRPWXwmSBEDRu1Qyt8ShmUBLUOPfAPfaqmKJmBIKg6BFcqfr9ylWMLZQBYRDitA55pMxgU/KJ1woMas38DMBEcIcOWeL3MoJ2heTYKK1q8KSWs+0I2Llo96SZzWxJdAiR3yhP9z/8AHIbkLFmGmhQgAAAABJRU5ErkJggg==" style="margin-right: 10px;">推薦給你</h2>
+
+    <div class="col" style="width: 70%; margin-left: 30px; margin-bottom: 30px;" >
         <div class="row">
             <div class="col-6 card mb-5">
-                <img src="https://pic.pimg.tw/yungfu0/1686409757-3526603285-g_n.jpg"
+                <img src="https://live.staticflickr.com/65535/52921083996_5653f75ba4_b.jpg"
                     class="card-img-top" alt="本日熱門(1)">
                 <div class="card-body">
-                    <p class="news-text">（分享）友情鏈接</p>
-                        <a href="https://yungfu0.pixnet.net/blog/post/341719845"
-                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                    <p class="news-text">台北好吃蛋糕*米多幸福X米菓子製造所~六日才開的隱藏版甜點店,口味蠻有意思,文山區美食</p>
+                        <a href="https://saliha.pixnet.net/blog/post/571816920"
+                            class="read-more-btn btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
                 </div>
             </div>
 
             <div class="col-6 card mb-5">
-                <img src="https://pic.pimg.tw/kwyt/1685544970-3596392669-g_l.jpg" class="card-img-top" alt="本日熱門(2)">
+                <img src="https://pic.pimg.tw/ayaya8888/1685027936-3682425721-g_n.jpg" class="card-img-top" alt="本日熱門(2)">
                 <div class="card-body">
-                    <p class="news-text">【瑞記海南雞飯大直北安店】多汁滑嫩海南雞！捷運大直站美食推薦，國際叻沙節南洋娘惹喇沙摻摻│菜單</p>
-                        <a href="https://kwyt.pixnet.net/blog/post/99812612-%E3%80%90%E7%91%9E%E8%A8%98%E6%B5%B7%E5%8D%97%E9%9B%9E%E9%A3%AF%E5%A4%A7%E7%9B%B4%E5%8C%97%E5%AE%89%E5%BA%97%E3%80%91%E5%A4%9A%E6%B1%81%E6%BB%91%E5%AB%A9%E6%B5%B7%E5%8D%97%E9%9B%9E"
-                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                    <p class="news-text">[英文漫畫]帶有懸疑要素的搞笑漫畫-InvestiGators 鱷魚探員</p>
+                        <a href="https://ayaya8888.pixnet.net/blog/post/356193919"
+                            class="read-more-btn btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
                 </div>
             </div>
 
             <div class="col-6 card mb-5">
-                <img src="https://pic.pimg.tw/momoko121212/1686089856-1823111294-g_l.jpg" class="card-img-top" alt="本日熱門(3)">
+                <img src="https://live.staticflickr.com/65535/52869408428_553038a2ec_c.jpg" class="card-img-top" alt="本日熱門(3)">
                 <div class="card-body">
-                    <p class="news-text">2023團購限時｜三得利蜂王乳+芝麻明E，正品一瓶直接打九折，贈送價值500元日本洗潤組6/8~6/19</p>
-                        <a href="https://momoko121212.pixnet.net/blog/post/50545132-beauty"
-                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                    <p class="news-text">台南早午餐 格列佛綠色星球-蔬食早午餐 台南素食餐廳推薦│台南南區美食│水萍塭公園附近美食</p>
+                        <a href="https://little15.pixnet.net/blog/post/50486496"
+                            class="read-more-btn btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
                 </div>
             </div>
 
             <div class="col-6 card mb-5">
-                <img src="https://pic.pimg.tw/tenshain/1671847424-2465946200-g_l.jpg" class="card-img-top" alt="本日熱門(4)">
+                <img src="https://pic.pimg.tw/rebecca1003/1397230351-1720021954_n.jpg" class="card-img-top" alt="本日熱門(4)">
                 <div class="card-body">
-                    <p class="news-text">[三重美食]吃飽再睡 情境私廚 │ 半夜餓醒絕不好受，吃飽再睡才是王道 │ 日式屋台的美味，居酒屋的溫暖，陪伴每一個半夜寂寞的胃 │</p>
-                        <a href="https://tenshain.pixnet.net/blog/post/364020300-%5B%E4%B8%89%E9%87%8D%E7%BE%8E%E9%A3%9F%5D%E5%90%83%E9%A3%BD%E5%86%8D%E7%9D%A1-%E6%83%85%E5%A2%83%E7%A7%81%E5%BB%9A-%E2%94%82-%E5%8D%8A%E5%A4%9C%E9%A4%93%E9%86%92%E7%B5%95"
-                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                    <p class="news-text">【東京賞櫻】上野恩賜公園 櫻吹雪美極了！！</p>
+                        <a href="https://rebecca1003.pixnet.net/blog/post/112297127"
+                            class="read-more-btn btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
                 </div>
             </div>
 
             <div class="col-6 card mb-5">
-                <img src="https://pic.pimg.tw/keyang0730/1608220771-554274530-g_n.jpg"class="card-img-top" alt="本日熱門(5)">
+                <img src="https://live.staticflickr.com/65535/52800252845_5faf4c6dc4_b.jpg"class="card-img-top" alt="本日熱門(5)">
                 <div class="card-body">
-                    <p class="news-text">《裕元花園酒店》中部五星飯店一泊二食百萬夜景x空中泳池住宿推薦，今晚我想來點「元膳日本料理」滿足我的味蕾，兩天一夜親子旅遊體驗（下篇）</p>
-                        <a href="https://keyang0730.pixnet.net/blog/post/329366221-%e3%80%8a%e8%a3%95%e5%85%83%e8%8a%b1%e5%9c%92%e9%85%92%e5%ba%97%e3%80%8b%e4%b8%ad%e9%83%a8%e4%ba%94%e6%98%9f%e9%a3%af%e5%ba%97%e4%b8%80%e6%b3%8a%e4%ba%8c%e9%a3%9f%e7%99%be%e8%90%ac"
-                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                    <p class="news-text">新北樹林一日遊這樣玩*好吃美食,景觀餐廳,踏青拍照景點,甜點咖啡廳,伴手禮小吃推薦</p>
+                        <a href="https://saliha.pixnet.net/blog/post/570286256"
+                            class="read-more-btn btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
                 </div>
             </div>
 
             <div class="col-6 card mb-5">
-                <img src="https://pic.pimg.tw/keyang0730/1604899684-3747424366-g_n.jpg" class="card-img-top" alt="本日熱門(6)">
+                <img src="https://pic.pimg.tw/eggface45/1683194826-3971778949-g_n.jpg" class="card-img-top" alt="本日熱門(6)">
                 <div class="card-body">
-                    <p class="news-text"></p>
-                        <a href="https://pic.pimg.tw/momoko121212/1686089856-1823111294-g_l.jpg"
-                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                    <p class="news-text">[台北私廚] 徐家私廚 OUAH HANCHI 無菜單中式料理 吃了會流淚的黯然銷魂飯！#松山區中山國中美食 @蛋寶趴趴go</p>
+                        <a href="https://eggface45.pixnet.net/blog/post/233037637"
+                            class="read-more-btn btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
                 </div>
             </div>
         </div>
@@ -350,6 +363,7 @@
                 </a>
             </div>
         </div>
-    </div>      
+    </div>
+          
 
 </html>
