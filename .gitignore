@@ -1,3 +1,4 @@
-
 blog/__pycache__/admin.cpython-311.pyc
 final_project/__pycache__/urls.cpython-311.pyc
+*.pyc
+blog/__pycache__/

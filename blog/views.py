@@ -32,4 +32,13 @@ def home(request):
 
 #     return render(request, 'search.html', context)
 
+#註冊
+def register(request):
+  form = UserCreationForm()
+  template = loader.get_template('register.html')
+  context = {
+    'form': form,
+  }
+
+  return HttpResponse(template.render(context, request))
 
