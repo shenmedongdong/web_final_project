@@ -33,19 +33,3 @@ def home(request):
 #     return render(request, 'search.html', context)
 
 
-def search(request):
-    if request.method == 'GET':
-        query = request.GET.get('query', '')  # 검색어를 가져옴
-
-  if query:
-    results = Post.objects.filter(title__contains=query)  # 검색어로 필터링된 결과 가져오기
-  else:
-    results = Post.objects.all()  # 검색어가 없을 경우 모든 결과 가져오기
-
-    context = {
-      'results': results,
-      'query': query,
-    }
-
-    return render(request, 'search.html', context)
-    return render(request, 'search.html', context)
