@@ -48,33 +48,83 @@
         .capsule-swiper-container {
             position: relative;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            content
+            padding-left: 30px;
         }
 
         .swiper-slide {
             position: relative;
             text-align: center;
-        }
+            margin-right: 20px;
 
-        .swiper-slide img {
-            display: block;
-            margin: 0 auto;
-            width: 100px;
-            height: 100px;
         }
 
         .caption {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -35%);
             text-align: center;
-            color: black;
-            font-size: 18px;
-            font-weight: bold;
+            color: white;
+            font-size: 30px;
+            font-weight: 550;
+            max-width: 100%;
         }
+
+        @media (max-width: 750px) {
+            .caption {
+                font-size: 15px;
+            }
+            
+        }
+
+        .rounded-image {
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .rounded-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin-left: 30px;
+        }
+
+        .hot-index-box__item {
+            border: 1px solid grey; /*가로로 3개씩 나열*/
+            border-radius: 10px; /* 테두리를 둥글게 설정 */
+            margin-bottom: 20px;
+            overflow: hidden; /* 초과된 부분을 감추도록 설정 */
+            text-overflow: ellipsis; /*생략 부분에 '...' 표시 */
+            width: calc(33.33% - 8px);
+        }
+
+        .hot-index-box__item img {
+            max-width: 100%; /* 이미지 너비 100%로 설정 */
+            max-height: 100%; /* 이미지 높이 자동 조정 */
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .hot-index-box__item {
+                width: calc(50% - 8px);
+            } 
+        }
+
     </style>
 
     {% block extraCSS %}
@@ -84,7 +134,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-bottom: 30px;" >
         <div class ="jumbotron">
                 <!-- home.html -->
             <form action="{% url 'search' %}" method="GET">
@@ -94,41 +144,182 @@
         </div>
     </div>
 
-    <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK3SURBVHgBzZgxcNMwFIZ/eWMLjCyYnbvSATZKssBI2WAiWVnig5EhyR0jR9OFlWbrRhlhadqVgfRgxyyMNFun2n1PUmI7iWPJju3+d7pIsWV9J+k9vScBS4UeXDjYpeoWlSaVhi6sKQR8hFSAEwQ4EkNZt5IwfTF8gzYN9op6NGEjgQn12xcfcWDeJQvGIwgHn6nqoph8KgMTOLEGpkEwPap62KyGtKwDWtYpbKD0vjmC2jdlyCewVtp+EylAxyi+XFlKBRMLQLxkPysAmo0+waUESyylg2SrVxkQK8R9PWZC85mSJg9pZdXLodn6gHHUjNRDXQqSkyGh9Cy5qE+uZpBSMyXQRd3i00LLkS6AN1yW7tFx9/4c6HwBbjSWn9901fN3f1TdVnR8SRaG0odrtna6CobhXh8vgz1sq/9uuep5HjDN4tAsNY06/P4a1W/TxD7bSz7/RQfAhXY3+cG2FJSDO0avnw6Bb4Oo/aANvIgZzb8J8KlVFKypoEILq/veLxusoaCiAC0/2I63HuylsU+eQ9lLhMn2xRSbFEPZffEpOf4n/aj9Y0TlIGqzEcSt89wHDjsw1NQeahXQYXs9EC/lfx9GUrG93OgnRh2ygHgzFwFS+qugOKYx0SMvHYg1c575gdirjxVUIMPebJ3upwOx2HkyTF4glmaR8VT4lsJfU89elkJMxB62ueroP0aoW5QbzqrxyJOO95piKrI6mqW7s2bkPAMYO5ONK8Qg3pxDUUYxjk9hZeKUfpjMmp2FF/q84VAdkC/HXFACSuZfIZ4D9jclOYFaq9L3pQNZZqyUuZYMdqaB/FUPV0YJGmy7lD3G3wzQXHdvlX0VpFKf4pmzWq6ONKgM2V6adalHduaThGGrHi1a2Eag5mOoNGiXFv6xDKWFbEfXi6qMaYnO6DfX9eK11BW8QgKhLWaMowAAAABJRU5ErkJggg==">
-    <h2>最近好多人搜尋</h2>
-    <div class="capsule-swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="https://curation.pixnet.net/寵物">
-                <img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" alt="Image">
-                <div class="caption">
-                  <h4>寵物</h4>
-                </div>
-              </a>
-        </div>
+    
+    
+    <h2 style="padding-left: 30px;">最近好多人搜尋<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK3SURBVHgBzZgxcNMwFIZ/eWMLjCyYnbvSATZKssBI2WAiWVnig5EhyR0jR9OFlWbrRhlhadqVgfRgxyyMNFun2n1PUmI7iWPJju3+d7pIsWV9J+k9vScBS4UeXDjYpeoWlSaVhi6sKQR8hFSAEwQ4EkNZt5IwfTF8gzYN9op6NGEjgQn12xcfcWDeJQvGIwgHn6nqoph8KgMTOLEGpkEwPap62KyGtKwDWtYpbKD0vjmC2jdlyCewVtp+EylAxyi+XFlKBRMLQLxkPysAmo0+waUESyylg2SrVxkQK8R9PWZC85mSJg9pZdXLodn6gHHUjNRDXQqSkyGh9Cy5qE+uZpBSMyXQRd3i00LLkS6AN1yW7tFx9/4c6HwBbjSWn9901fN3f1TdVnR8SRaG0odrtna6CobhXh8vgz1sq/9uuep5HjDN4tAsNY06/P4a1W/TxD7bSz7/RQfAhXY3+cG2FJSDO0avnw6Bb4Oo/aANvIgZzb8J8KlVFKypoEILq/veLxusoaCiAC0/2I63HuylsU+eQ9lLhMn2xRSbFEPZffEpOf4n/aj9Y0TlIGqzEcSt89wHDjsw1NQeahXQYXs9EC/lfx9GUrG93OgnRh2ygHgzFwFS+qugOKYx0SMvHYg1c575gdirjxVUIMPebJ3upwOx2HkyTF4glmaR8VT4lsJfU89elkJMxB62ueroP0aoW5QbzqrxyJOO95piKrI6mqW7s2bkPAMYO5ONK8Qg3pxDUUYxjk9hZeKUfpjMmp2FF/q84VAdkC/HXFACSuZfIZ4D9jclOYFaq9L3pQNZZqyUuZYMdqaB/FUPV0YJGmy7lD3G3wzQXHdvlX0VpFKf4pmzWq6ONKgM2V6adalHduaThGGrHi1a2Eag5mOoNGiXFv6xDKWFbEfXi6qMaYnO6DfX9eK11BW8QgKhLWaMowAAAABJRU5ErkJggg==" style="padding-left: 10px; margin-bottom: 20px; max-width: 100%; max-height: 100%;">
+    </h2>   
 
-          <div class="swiper-slide">
-            <a href="https://curation.pixnet.net/寵物">
-                <img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" alt="Image">
-                <div class="caption">
-                  <h4>寵物</h4>
-                </div>
-              </a>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" alt="Slide 3">
-          </div>
+    <div class="capsule-swiper-container" style="display: flex; flex-wrap: nowrap; margin-bottom: 60px; width: 70%;">
+        <div class="swiper-wrapper" style="display: flex;">
+            <div class="swiper-slide" style="flex: 1;">
+                <a href="https://curation.pixnet.net/%E5%AF%B5%E7%89%A9">
+                    <div class="rounded-image">
+                        <img src="https://i.namu.wiki/i/AjWTOsfJcwKl56hq29IAzS_wG2d92aVd7HrEKe0LczHXd2NQHN-2DCabysLNeBj5766tCUuAmylMQPqPHffP32bd8xtvhnu8iwKipY--M8oOrkpo5kTKe8Zfzr2uEjfdZGVS15WWgZ_H4iQZiOCprg.webp" alt="Image" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="caption">
+                    <p>寵物</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide" style="flex: 1;">
+                <a href="https://curation.pixnet.net/%E8%A6%AA%E5%AD%90%E6%97%85%E9%81%8A">
+                    <div class="rounded-image">
+                        <img src="https://image-resizer.parenting.com.tw/resize/uri/https%3A%2F%2Fcp.cw1.tw%2Ffiles%2Fmd5%2Ff3%2F84%2Ff38481b07733e8a61bc75d01aa2f2824-199418.jpg/?w=800&format=webp" alt="Image" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="caption">
+                        <p>親子旅游</p>
+                    </div>
+                </a>
+            </div>
+        
+            <div class="swiper-slide" style="flex: 1;">
+                <a href="https://curation.pixnet.net/%E9%9F%93%E5%9C%8B">
+                    <div class="rounded-image">
+                        <img src="https://blog.asiayo.com/wp-content/uploads/korea_OG_shelly.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="caption">
+                        <p>韓國</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide" style="flex: 1;">
+                <a href="https://curation.pixnet.net/%E6%9D%B1%E4%BA%AC">
+                    <div class="rounded-image">
+                        <img src="https://res.klook.com/image/upload/fl_lossy.progressive,w_800,c_fill,q_85/destination/hedg75nmtltosebw3n6m.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="caption">
+                        <p>東京</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide" style="flex: 1;">
+                <a href="https://curation.pixnet.net/%E6%B2%96%E7%B9%A9">
+                    <div class="rounded-image">
+                        <img src="https://res.klook.com/image/upload/q_85/c_fill,w_750/fl_lossy.progressive/q_auto/blogtw/2019/06/1064137e6a8893-f409-4cc2-98ed-aec7e4cc3b78_m.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="caption">
+                        <p>沖繩</p>
+                    </div>
+                </a>
+            </div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-      </div>
+    </div>
 
-    <p><a href="https://curation.pixnet.net/%E5%AF%B5%E7%89%A9"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
-    <p><a href="https://curation.pixnet.net/%E8%A6%AA%E5%AD%90%E6%97%85%E9%81%8A"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
-    <p><a href="https://curation.pixnet.net/%E9%9F%93%E5%9C%8B"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
-    <p><a href="https://curation.pixnet.net/%E6%9D%B1%E4%BA%AC"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
-    <p><a href="https://curation.pixnet.net/%E6%B2%96%E7%B9%A9"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+    <center>
+        <h5>You are logged out</h5>
+        <p style="margin-bottom: 60px;">Please log in and check the neighborhood new post</p>
+    </center>
+    <h2 style="margin-left: 30px; margin-bottom: 20px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADmSURBVHgBtVKBDYIwELyiA+AGuAEjwAZuoE4guoBxAJUR2MA4gWygI7CBDmCoVyyE1tBAIpd8+u3/3//lC4wJmSCkBa6cqSsIDxftzbtTurrvsOIRKNP+MAJi3+EbEE3HBH7V0UMIiYiRpZWb8e1Ke+GNh0h51gRyi5TeBsOQiRPWXwmSBEDRu1Qyt8ShmUBLUOPfAPfaqmKJmBIKg6BFcqfr9ylWMLZQBYRDitA55pMxgU/KJ1woMas38DMBEcIcOWeL3MoJ2heTYKK1q8KSWs+0I2Llo96SZzWxJdAiR3yhP9z/8AHIbkLFmGmhQgAAAABJRU5ErkJggg==" style="margin-right: 10px;">本日熱門</h2>
+    <div class="box">
+        <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
+            <img src="https://pic.pimg.tw/kwyt/1685544970-3596392669-g_l.jpg" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;">
+            <div class="hot-index-box__box">
+                <a href="https://kwyt.pixnet.net/blog/post/99812612-%E3%80%90%E7%91%9E%E8%A8%98%E6%B5%B7%E5%8D%97%E9%9B%9E%E9%A3%AF%E5%A4%A7%E7%9B%B4%E5%8C%97%E5%AE%89%E5%BA%97%E3%80%91%E5%A4%9A%E6%B1%81%E6%BB%91%E5%AB%A9%E6%B5%B7%E5%8D%97%E9%9B%9E" target="_blank" rel="noreferrer noopener" class="hot-index-box__link">【瑞記海南雞飯大直北安店】多汁滑嫩海南雞！捷運大直站美食推薦，國際叻沙節南洋娘惹喇沙摻摻│菜單</a>
+            </div>
+        </div>
+
+        <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
+            <img src="https://pic.pimg.tw/momoko121212/1686089856-1823111294-g_l.jpg" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;">
+            <div class="hot-index-box__box">
+                <a href="https://momoko121212.pixnet.net/blog/post/50545132-beauty" target="_blank" rel="noreferrer noopener" class="hot-index-box__link"> 2023團購限時｜三得利蜂王乳+芝麻明E，正品一瓶直接打九折，贈送價值500元日本洗潤組6/8~6/19</a>
+            </div>
+        </div>
+
+        <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
+            <img src="https://pic.pimg.tw/sai083/1684754527-2729207818-g.png" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;">
+            <div class="hot-index-box__box">
+                <a href="https://sai083.pixnet.net/blog/post/356176546-%e7%8b%82%e4%b8%80%e9%8d%8b-%e6%96%b0%e5%8f%b0%e5%bc%8f%e7%81%ab%e9%8d%8b%ef%bd%9c%e6%96%b0%e5%8c%97%e7%be%8e%e9%a3%9f%ef%bd%9c" target="_blank" rel="noreferrer noopener" class="hot-index-box__link">狂一鍋 新台式火鍋｜新北美食、多分店｜超狂湯頭（整隻魷魚、大雞腿入菜）以及食材用料實在！就連配料都不馬虎，完全吃得到用心的一家火鍋店！</a>
+            </div>           
+        </div>
+
+        <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
+            <img src="https://pic.pimg.tw/tenshain/1671847424-2465946200-g_l.jpg" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;"> 
+            <div class="hot-index-box__box">
+                <a href="https://tenshain.pixnet.net/blog/post/364020300-%5B%E4%B8%89%E9%87%8D%E7%BE%8E%E9%A3%9F%5D%E5%90%83%E9%A3%BD%E5%86%8D%E7%9D%A1-%E6%83%85%E5%A2%83%E7%A7%81%E5%BB%9A-%E2%94%82-%E5%8D%8A%E5%A4%9C%E9%A4%93%E9%86%92%E7%B5%95" target="_blank" rel="noreferrer noopener" class="hot-index-box__link">[三重美食]吃飽再睡 情境私廚 │ 半夜餓醒絕不好受，吃飽再睡才是王道 │ 日式屋台的美味，居酒屋的溫暖，陪伴每一個半夜寂寞的胃 │</a>
+            </div>
+        </div>
+
+        <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
+            <img src="https://live.staticflickr.com/65535/52334200550_ec947f9a07_k.jpg" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;">
+            <div class="hot-index-box__box">
+                <a href="https://justin531xx.pixnet.net/blog/post/48365524-%5b%e6%b4%97%e8%a1%a3%e5%ba%97%e5%b7%a1%e7%a6%ae%5d-%e5%bd%b0%e5%8c%96%e4%bc%b8%e6%b8%af%ef%bc%8coday%e6%97%a5%e5%bc%8f%e8%87%aa%e5%8a%a9%e6%b4%97%e8%a1%a3-%e4%bc%b8" target="_blank" rel="noreferrer noopener" class="hot-index-box__link">[洗衣店巡禮] 彰化伸港，ODay日式自助洗衣-伸港店(中山東路)</a>
+            </div>
+        </div>
+
+        <div class="hot-index-box__item swiper-slide swiper-slide-active" style="width: 300px; height: 150px; margin-right: 16px; display: flex; align-items: center;">
+            <img src="https://pic.pimg.tw/keyang0730/1608220771-554274530-g_n.jpg" alt="배경 이미지" style="width: 150px; height: 150px; display: flex; align-items: center;">
+            <div class="hot-index-box__box">
+                <a href="https://keyang0730.pixnet.net/blog/post/329366221-%e3%80%8a%e8%a3%95%e5%85%83%e8%8a%b1%e5%9c%92%e9%85%92%e5%ba%97%e3%80%8b%e4%b8%ad%e9%83%a8%e4%ba%94%e6%98%9f%e9%a3%af%e5%ba%97%e4%b8%80%e6%b3%8a%e4%ba%8c%e9%a3%9f%e7%99%be%e8%90%ac" target="_blank" rel="noreferrer noopener" class="hot-index-box__link">《裕元花園酒店》中部五星飯店一泊二食百萬夜景x空中泳池住宿推薦，今晚我想來點「元膳日本料理」滿足我的味蕾，兩天一夜親子旅遊體驗（下篇）</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col" style="width: 70%; padding-left: 100px;">
+        <div class="row">
+            <div class="col-6 card mb-5">
+                <img src="https://pic.pimg.tw/yungfu0/1686409757-3526603285-g_n.jpg"
+                    class="card-img-top" alt="本日熱門(1)">
+                <div class="card-body">
+                    <p class="news-text">（分享）友情鏈接</p>
+                        <a href="https://yungfu0.pixnet.net/blog/post/341719845"
+                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-6 card mb-5">
+                <img src="https://pic.pimg.tw/kwyt/1685544970-3596392669-g_l.jpg" class="card-img-top" alt="本日熱門(2)">
+                <div class="card-body">
+                    <p class="news-text">【瑞記海南雞飯大直北安店】多汁滑嫩海南雞！捷運大直站美食推薦，國際叻沙節南洋娘惹喇沙摻摻│菜單</p>
+                        <a href="https://kwyt.pixnet.net/blog/post/99812612-%E3%80%90%E7%91%9E%E8%A8%98%E6%B5%B7%E5%8D%97%E9%9B%9E%E9%A3%AF%E5%A4%A7%E7%9B%B4%E5%8C%97%E5%AE%89%E5%BA%97%E3%80%91%E5%A4%9A%E6%B1%81%E6%BB%91%E5%AB%A9%E6%B5%B7%E5%8D%97%E9%9B%9E"
+                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-6 card mb-5">
+                <img src="https://pic.pimg.tw/momoko121212/1686089856-1823111294-g_l.jpg" class="card-img-top" alt="本日熱門(3)">
+                <div class="card-body">
+                    <p class="news-text">2023團購限時｜三得利蜂王乳+芝麻明E，正品一瓶直接打九折，贈送價值500元日本洗潤組6/8~6/19</p>
+                        <a href="https://momoko121212.pixnet.net/blog/post/50545132-beauty"
+                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-6 card mb-5">
+                <img src="https://pic.pimg.tw/tenshain/1671847424-2465946200-g_l.jpg" class="card-img-top" alt="本日熱門(4)">
+                <div class="card-body">
+                    <p class="news-text">[三重美食]吃飽再睡 情境私廚 │ 半夜餓醒絕不好受，吃飽再睡才是王道 │ 日式屋台的美味，居酒屋的溫暖，陪伴每一個半夜寂寞的胃 │</p>
+                        <a href="https://tenshain.pixnet.net/blog/post/364020300-%5B%E4%B8%89%E9%87%8D%E7%BE%8E%E9%A3%9F%5D%E5%90%83%E9%A3%BD%E5%86%8D%E7%9D%A1-%E6%83%85%E5%A2%83%E7%A7%81%E5%BB%9A-%E2%94%82-%E5%8D%8A%E5%A4%9C%E9%A4%93%E9%86%92%E7%B5%95"
+                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-6 card mb-5">
+                <img src="https://pic.pimg.tw/keyang0730/1608220771-554274530-g_n.jpg"class="card-img-top" alt="本日熱門(5)">
+                <div class="card-body">
+                    <p class="news-text">《裕元花園酒店》中部五星飯店一泊二食百萬夜景x空中泳池住宿推薦，今晚我想來點「元膳日本料理」滿足我的味蕾，兩天一夜親子旅遊體驗（下篇）</p>
+                        <a href="https://keyang0730.pixnet.net/blog/post/329366221-%e3%80%8a%e8%a3%95%e5%85%83%e8%8a%b1%e5%9c%92%e9%85%92%e5%ba%97%e3%80%8b%e4%b8%ad%e9%83%a8%e4%ba%94%e6%98%9f%e9%a3%af%e5%ba%97%e4%b8%80%e6%b3%8a%e4%ba%8c%e9%a3%9f%e7%99%be%e8%90%ac"
+                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="col-6 card mb-5">
+                <img src="https://pic.pimg.tw/keyang0730/1604899684-3747424366-g_n.jpg" class="card-img-top" alt="本日熱門(6)">
+                <div class="card-body">
+                    <p class="news-text"></p>
+                        <a href="https://pic.pimg.tw/momoko121212/1686089856-1823111294-g_l.jpg"
+                            class="james btn btn-primary d-flex justify-content-center" style="padding: 10px 24px; margin: auto;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>     
+
     <p>本日熱門</p>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- 슬라이드 항목 -->
@@ -160,10 +351,5 @@
             </div>
         </div>
     </div>      
-    
-    <center>
-        <h5>You are logged out</h5>
-        <p>Please log in and check the neighborhood new post</p>  
-    </center>
 
 </html>
